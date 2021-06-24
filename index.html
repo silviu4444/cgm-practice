@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
-</body>
-<script src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <head>
+      <nav>
+        <div class="left-side-nav">
+          <a href="#">Home</a>
+          <a href="#">Contact</a>
+          <a href="#">About</a>
+        </div>
+
+        <div class="right-side-nav">
+          <a href="#">Sign Up</a>
+        </div>
+      </nav>
+
+      <main>
+        <form action="PUT">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required/>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required/>
+
+            <label for="checkbox">I agree with the <a href="#">terms</a></label>
+            <input type="checkbox" id="checkbox">
+
+            <input id="submit" type="submit">
+        </form>
+      </main>
+    </head>
+  </body>
+  <script src="index.js"></script>
 </html>

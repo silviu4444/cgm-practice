@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+    padding: 20px 10px;
+}
+nav a {
+    color: white;
+    margin-left: 10px;
+    border: 1px solid rgb(247, 158, 25);
+    background-color: rgb(247, 158, 25);
+    padding: 7px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s;
+}
+nav a:hover {
+    transform: scale(1.02);
+    background-color: transparent;
+    transition: .5s;
+}
+.right-side-nav {
+    margin-right: 10px;
+}
+main {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+form {
+    border: 1px solid rgb(19, 55, 66);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+   /* border: 1px solid rgb(247, 158, 25);  */
+}
+form input:focus {
+    outline: none;
+}
