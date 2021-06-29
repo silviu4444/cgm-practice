@@ -5,37 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <head>
-      <nav>
-        <div class="left-side-nav">
-          <a href="#">Home</a>
-          <a href="#">Contact</a>
-          <a href="#">About</a>
-        </div>
+    <header class="main-header">
+      <button class="menu-button"><i class="fas fa-bars"></i></button>
+      <div class="user-menu">
+        <ul>
+          <li>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          </li>
+          <li><a class="login-button" href="#">Login/Register</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="register-wrapper" style="display: block;">
+      <button class="register-wrapper-close-button">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <div class="form-container">
+        <form action="sad">
+          <i class="far fa-user"></i>
+          <div class="label-container">
+            <label for="username"> Username </label>
+            <input
+              class="mb-15"
+              type="text"
+              id="username"
+              placeholder="Enter username"
+            />
+            <div class="invalid-username mb-15"></div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="mb-15"
+              placeholder="Enter email"
+            />
+            <div class="invalid-email"></div>
+            <label for="password">Password</label>
+            <input
+              class="mb-10"
+              type="password"
+              id="password"
+              placeholder="Password"
+            />
+            <div class="invalid-password mb-15"></div>
+            <label for="conf-password">Confirm Password</label>
+            <input
+              class="mb-15"
+              type="password"
+              id="conf-password"
+              placeholder="Confirm Password"
+            />
+            <div class="invalid-conf-password mb-15"></div>
+            <div>
+              <label for="checkbox">Remember me</label>
+              <input class="mb-10" type="checkbox" id="checkbox" />
+            </div>
+            <input type="submit" id="submit" disabled />
 
-        <div class="right-side-nav">
-          <a href="#">Sign Up</a>
-        </div>
-      </nav>
-
-      <main>
-        <form action="PUT">
-            <label for="username">Username:</label>
-            <input type="text" id="username" required/>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" required/>
-
-            <label for="checkbox">I agree with the <a href="#">terms</a></label>
-            <input type="checkbox" id="checkbox">
-
-            <input id="submit" type="submit">
+            <p>Already have an account? <a href="#">Login</a></p>
+          </div>
         </form>
-      </main>
-    </head>
+      </div>
+    </div>
+    <nav class="clothes-nav">
+      <ul class="nav-items nav-shoes">
+        <li>Shoes Type</li>
+        <li>Shoes Type</li>
+        <li>Shoes Type</li>
+      </ul>
+    </nav>
+    <nav class="clothes-nav nav-t-shirt" style="display: none">
+      <ul class="nav-items">
+        <li>T-shirt Type</li>
+        <li>T-shirt Type</li>
+        <li>T-shirt Type</li>
+      </ul>
+    </nav>
+    <nav class="clothes-nav nav-jeans" style="display: none">
+      <ul class="nav-items">
+        <li>Jeans Type</li>
+        <li>Jeans Type</li>
+        <li>Jeans Type</li>
+      </ul>
+    </nav>
+    <div class="sidebar" style="display: none">
+      <div class="button-container">
+        <button class="sidebar-button">X</button>
+      </div>
+      <ul class="sidebar-items">
+        <li class="sidebar-item">
+          <a href="/Store App/pages/Shoes/shoes.html">Shoes</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/Store App/pages/TShirt/tshirt.html">T-shirt</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/Store App/pages/Jeans/jeans.html">Jeans</a>
+        </li>
+      </ul>
+    </div>
   </body>
-  <script src="index.js"></script>
+  <script src="app.js"></script>
+  <script
+    src="https://kit.fontawesome.com/6b2274a183.js"
+    crossorigin="anonymous"
+  ></script>
 </html>

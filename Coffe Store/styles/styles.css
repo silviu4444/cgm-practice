@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+}
+
+#mainHeader {
+    padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#mainHeader {
+  display: flex;
+  align-items: center;
+}
+
+#mainHeader .headerLogo img {
+  width: 60px;
+  height: 60px;
+}
+
+
+#mainHeader span {
+  font-size: 40px;
+  color: teal;
+}
+
+#mainHeader input {
+  padding: 5px;
+}
+
+#mainHeader input:focus {
+  outline: none;
+}
+
+.backgroundGradient {
+    background-color: rgb(44, 77, 66);
+}
+
+nav ul {
+    padding: 10px;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li li{
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    background-color: rgb(29, 51, 44);
+}
+.container {
+display: flex;
+justify-content: space-around;
+}
+.welcomeImage {
+    margin-left: auto;
+    margin-right: auto;
+}
+.container .mainContent {
+    width: 900px;
+}
+
+#welcomeText header {
+    color: #636363;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.coffeeBestSellers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productArticle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addToCartButton {
+    background-color: rgb(29, 118, 177);
+    width: fit-content;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.productArticleName a {
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+}

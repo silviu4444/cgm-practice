@@ -1,0 +1,391 @@
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+  }
+  .is-active {
+    background-color: rgb(62, 112, 177) !important;
+}
+  @media (max-width: 300px) {
+      .main-header {
+          .aa {
+              width: 300px;
+          }
+          .menu-button {
+              background-color: transparent;
+              border: none;
+              font-size: 20px;
+              color: white;
+          }
+          .menu-button:hover {
+              cursor: pointer;
+          }
+        background-color: #1abc9c;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        a {
+          text-decoration: none;
+          font-size: 13px;
+          color: white;
+        }
+        .contact {
+          color: white;
+          margin-bottom: 15px;
+          font-size: 13px;
+          a {
+            margin-left: 10px;
+          }
+        }
+        .user-menu {
+          color: white;
+          ul {
+            display: flex;
+            justify-content: flex-start;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            flex-wrap: wrap;
+            a {
+              margin: 0 15px;
+            }
+          }
+        }
+      }
+      .clothes-nav {
+        .nav-shoes {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding: 10px;
+            margin: 0;
+            background-color: rgb(33, 161, 170);
+            li {
+                margin: 0 10px;
+                color: white;
+            }
+            li:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    
+      .sidebar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200px;
+          height: 100vh;
+          -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        //   padding: 20px;
+          background-color: white;
+          box-shadow: 2px 2px 5px gray;
+          .button-container {
+            background-color: #009688;
+            padding: 10px;
+        }
+          button {
+              font-size: 20px;
+              color: white;
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+              border-radius: 5px;
+          }
+          button:hover {
+              color: black;
+          }
+          .sidebar-items {
+              padding: 0;
+              .sidebar-item {
+                padding: 10px;
+                background-color: #1abc9c;
+                list-style: none;
+                margin-bottom: 10px;;
+                color: white;
+                margin-bottom: 10px;
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+              }
+          }
+      }
+  }
+  @media (min-width: 300px) and (max-width: 575.98px) {
+    .main-header {
+        .menu-button {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: white;
+        }
+        .menu-button:hover {
+            cursor: pointer;
+        }
+      background-color: #1abc9c;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      a {
+        text-decoration: none;
+        font-size: 13px;
+        color: white;
+      }
+      .contact {
+        color: white;
+        margin-bottom: 15px;
+        font-size: 13px;
+        a {
+          margin-left: 10px;
+        }
+      }
+      .user-menu {
+        color: white;
+        ul {
+          display: flex;
+          justify-content: flex-start;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          flex-wrap: wrap;
+          a {
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+    .clothes-nav {
+      .nav-shoes {
+          display: flex;
+          list-style: none;
+          justify-content: center;
+          padding: 10px;
+          margin: 0;
+          background-color: rgb(33, 161, 170);
+          li {
+              margin: 0 10px;
+              color: white;
+          }
+          li:hover {
+              cursor: pointer;
+          }
+      }
+  }
+  
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100vh;
+        -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      //   padding: 20px;
+        background-color: white;
+        box-shadow: 2px 2px 5px gray;
+        .button-container {
+          background-color: #009688;
+          padding: 10px;
+      }
+        button {
+            font-size: 20px;
+            color: white;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            color: black;
+        }
+        .sidebar-items {
+            padding: 0;
+            .sidebar-item {
+              padding: 10px;
+              background-color: #1abc9c;
+              list-style: none;
+              margin-bottom: 10px;;
+              color: white;
+              margin-bottom: 10px;
+              a {
+                  text-decoration: none;
+                  color: white;
+              }
+            }
+        }
+    }
+  }
+  
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .main-header {
+      background-color: #1abc9c;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      a {
+        text-decoration: none;
+        font-size: 13px;
+        color: white;
+      }
+      .contact {
+        color: white;
+        margin-bottom: 15px;
+        font-size: 13px;
+        a {
+          margin-left: 15px;
+        }
+      }
+      .user-menu {
+        color: white;
+        ul {
+          display: flex;
+          margin: 0;
+          list-style-type: none;
+          a {
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+  }
+  
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .main-header {
+      background-color: #1abc9c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      a {
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .contact {
+        color: white;
+        display: flex;
+        font-size: 13px;
+        a {
+          margin-left: 20px;
+        }
+      }
+      .user-menu {
+        color: white;
+        ul {
+          display: flex;
+          margin: 0;
+          list-style-type: none;
+          a {
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    .main-header {
+      background-color: #1abc9c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 80px;
+      font-size: 15px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .contact {
+        color: white;
+        display: flex;
+        a {
+          margin-left: 20px;
+        }
+      }
+      .user-menu {
+        color: white;
+        ul {
+          display: flex;
+          margin: 0;
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+  
+  }
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .main-header {
+      background-color: #1abc9c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 80px;
+      font-size: 15px;
+      a {
+        color: white;
+      }
+      .contact {
+        color: white;
+        display: flex;
+        a {
+          margin-left: 20px;
+        }
+      }
+      .user-menu {
+        color: white;
+        ul {
+          display: flex;
+          margin: 0;
+          list-style-type: none;
+          a {
+            text-decoration: none;
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+  }
+  
+  @-webkit-keyframes slide-in-left {
+      0% {
+        -webkit-transform: translateX(-1000px);
+                transform: translateX(-1000px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slide-in-left {
+      0% {
+        -webkit-transform: translateX(-1000px);
+                transform: translateX(-1000px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        opacity: 1;
+      }
+    }
