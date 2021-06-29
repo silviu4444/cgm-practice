@@ -154,6 +154,8 @@ passswordInput.addEventListener("keyup", (e) => {
         }
     }
   }
+
+
   if (value.length === 0) {
     passswordInput.parentNode.childNodes[17].style.display = "none";
   }
