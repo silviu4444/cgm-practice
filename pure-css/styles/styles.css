@@ -1,0 +1,518 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Mobile  */
+@media (max-width: 600px) {
+  .main-header {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #009688;
+  }
+  .main-header__menu-button {
+    padding: 5px 10px;
+    position: absolute;
+    float: left;
+    top: 15%;
+    left: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border-radius: 4px;
+  }
+  .main-header__menu-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+  }
+  .main-header p {
+    display: none;
+  }
+  .main-header__user-menu {
+    float: right;
+  }
+  .main-header__user-menu ul {
+    list-style: none;
+    text-decoration: none;
+  }
+  .main-header__user-menu ul li {
+    margin: 0 5px;
+    display: inline;
+  }
+  .main-header__user-menu ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  .main-navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    -webkit-box-shadow: 2px 2px 5px grey;
+            box-shadow: 2px 2px 5px grey;
+  }
+  .main-navigation .button-container {
+    background-color: #009688;
+    padding: 10px;
+  }
+  .main-navigation .button-container .menu-button-navigation {
+    color: white;
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    margin-left: 10px;
+  }
+  .main-navigation .button-container .menu-button-navigation:hover {
+    cursor: pointer;
+    color: #1abc9c;
+  }
+  .main-navigation .nav-items ul {
+    list-style: none;
+    padding: 0;
+  }
+  .main-navigation .nav-items ul li {
+    list-style: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-transform: uppercase;
+  }
+  .main-navigation .nav-items ul li .nav-link {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+  }
+  .main-navigation .nav-items ul li span {
+    float: right;
+  }
+  .main-navigation .nav-items ul li span a {
+    color: black;
+  }
+  .main-navigation .nav-items ul li .fa-angle-down {
+    display: none;
+  }
+  .login-form {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.26);
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .login-form__container-form {
+    margin-top: 150px;
+    background-color: #21a1aa;
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  .login-form__container-form .close-button {
+    background-color: transparent;
+    border: none;
+  }
+  .login-form__container-form .close-button i {
+    font-size: 20px;
+    color: white;
+  }
+  .login-form__container-form .close-button i:hover {
+    cursor: pointer;
+    color: #1abc9c;
+  }
+  .login-form__container-form form {
+    margin-top: 20px;
+  }
+  .login-form__container-form form label {
+    color: white;
+  }
+  .login-form__container-form form input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: transparent;
+  }
+  .login-form__container-form form input:focus {
+    outline: none;
+    color: white;
+  }
+  .login-form__container-form form input::-webkit-input-placeholder {
+    color: white;
+  }
+  .login-form__container-form form input:-ms-input-placeholder {
+    color: white;
+  }
+  .login-form__container-form form input::-ms-input-placeholder {
+    color: white;
+  }
+  .login-form__container-form form input::placeholder {
+    color: white;
+  }
+  .login-form__container-form form input[type="checkbox"] {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .login-form__container-form form input[type="submit"] {
+    color: white;
+  }
+  .login-form__container-form form span {
+    color: white;
+  }
+  .login-form__container-form form .form_register-btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    text-decoration: underline;
+  }
+  .login-form__container-form form .form_register-btn:hover {
+    cursor: pointer;
+  }
+  .register-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.26);
+    z-index: 1;
+    top: 0;
+  }
+  .register-wrapper__close-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 50px;
+  }
+  .register-wrapper__close-button:hover {
+    cursor: pointer;
+    color: #1abc9c;
+  }
+  .register-wrapper__container-form {
+    background-color: #21a1aa;
+    width: 250px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  .register-wrapper__container-form i {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+  }
+  .register-wrapper__container-form form {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .register-wrapper__container-form form label {
+    color: white;
+  }
+  .register-wrapper__container-form form input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: transparent;
+  }
+  .register-wrapper__container-form form input:focus {
+    outline: none;
+    color: white;
+  }
+  .register-wrapper__container-form form input::-webkit-input-placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input:-ms-input-placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input::-ms-input-placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input::placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input[type="checkbox"] {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .register-wrapper__container-form form input[type="submit"] {
+    color: white;
+  }
+}
+
+@media (min-width: 600px) {
+  .main-header {
+    width: 100%;
+    background-color: #009688;
+    height: 50px;
+  }
+  .main-header__menu-button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: 15px;
+  }
+  .main-header__menu-button i {
+    display: none;
+  }
+  .main-header__menu-button:hover {
+    cursor: pointer;
+  }
+  .main-header p {
+    color: white;
+    float: left;
+    margin: 15px 0 0 15px;
+    font-size: 20px;
+  }
+  .main-header p a {
+    text-decoration: none;
+    color: white;
+  }
+  .main-header p:hover {
+    cursor: pointer;
+  }
+  .main-header span {
+    color: #1abc9c;
+  }
+  .main-header__user-menu {
+    float: right;
+    margin-right: 15px;
+  }
+  .main-header__user-menu ul {
+    list-style: none;
+    text-decoration: none;
+  }
+  .main-header__user-menu ul li {
+    margin: 0 5px;
+    display: inline;
+  }
+  .main-header__user-menu ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  .main-navigation {
+    background-color: #1abc9c;
+  }
+  .main-navigation .menu-button-navigation {
+    display: none;
+  }
+  .main-navigation .nav-items {
+    width: 100%;
+  }
+  .main-navigation .nav-items ul {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    height: 50px;
+  }
+  .main-navigation .nav-items ul li {
+    margin: 5px 10px 0 10px;
+    display: inline-block;
+  }
+  .main-navigation .nav-items ul li .link-container {
+    text-align: center;
+  }
+  .main-navigation .nav-items ul li .link-container .nav-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 20px;
+  }
+  .main-navigation .nav-items ul li .link-container i {
+    color: white;
+  }
+  .main-navigation .nav-items ul li .nav-icon-mobile {
+    display: none;
+  }
+  .login-form {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #21a1aa;
+    z-index: 1;
+  }
+  .login-form__container-form {
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    padding: 10px;
+  }
+  .login-form__container-form .close-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+  .login-form__container-form .close-button i {
+    color: white;
+    font-size: 20px;
+  }
+  .login-form__container-form .close-button i:hover {
+    color: #1abc9c;
+    cursor: pointer;
+  }
+  .login-form__container-form form {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .login-form__container-form form label {
+    color: white;
+  }
+  .login-form__container-form form input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: transparent;
+  }
+  .login-form__container-form form input:focus {
+    outline: none;
+    color: white;
+  }
+  .login-form__container-form form input::-webkit-input-placeholder {
+    color: white;
+  }
+  .login-form__container-form form input:-ms-input-placeholder {
+    color: white;
+  }
+  .login-form__container-form form input::-ms-input-placeholder {
+    color: white;
+  }
+  .login-form__container-form form input::placeholder {
+    color: white;
+  }
+  .login-form__container-form form input[type="checkbox"] {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .login-form__container-form form input[type="submit"] {
+    color: white;
+  }
+  .login-form__container-form form span {
+    color: white;
+  }
+  .login-form__container-form form .form_register-btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    text-decoration: underline;
+  }
+  .login-form__container-form form .form_register-btn:hover {
+    cursor: pointer;
+  }
+  .register-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.26);
+    z-index: 1;
+  }
+  .register-wrapper__close-button {
+    margin-top: 50px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+  }
+  .register-wrapper__close-button:hover {
+    cursor: pointer;
+    color: #1abc9c;
+  }
+  .register-wrapper__container-form {
+    background-color: #21a1aa;
+    width: 250px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  .register-wrapper__container-form i {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+  }
+  .register-wrapper__container-form form {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .register-wrapper__container-form form label {
+    color: white;
+  }
+  .register-wrapper__container-form form input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: transparent;
+  }
+  .register-wrapper__container-form form input:focus {
+    outline: none;
+    color: white;
+  }
+  .register-wrapper__container-form form input::-webkit-input-placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input:-ms-input-placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input::-ms-input-placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input::placeholder {
+    color: white;
+  }
+  .register-wrapper__container-form form input[type="checkbox"] {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .register-wrapper__container-form form input[type="submit"] {
+    color: white;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
