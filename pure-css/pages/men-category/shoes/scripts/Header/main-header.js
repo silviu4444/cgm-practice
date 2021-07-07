@@ -16,12 +16,12 @@ const openCategoryMenu = (category) => {
   const categoryMenu = document.createElement("div");
   categoryMenu.classList.add("category-menu");
   categoryMenu.innerHTML = categoryMenuHTML;
-  navigation.children[1].appendChild(categoryMenu);
+  navigation.appendChild(categoryMenu);
   const categoryMenuLinksContainer = categoryMenu.children[0];
   const onClick = (e) => {
     e.stopPropagation();
     if (categoryMenuLinksContainer && e.target !== categoryMenuLinksContainer) {
-      navigation.children[1].children[1].remove();
+      navigation.children[2].remove();
       document.body.removeEventListener("click", onClick);
     }
   };
@@ -61,14 +61,13 @@ const addingAParentElementInDOM = (elementType, className, htmlToInsert, closeBt
 
 const initializingTheSubMenu = (className) => {
   const mainNavigation = document.querySelector(`.${className}`);
-  console.log()
   const subNavigator = document.querySelectorAll(".nav-link");
   subNavigator.forEach((item) => {
     item.addEventListener("click", (e) => {
       const category = e.path[1].children[0].innerHTML;
       e.stopPropagation();
-      if (mainNavigation.children[1].children[1]) {
-        mainNavigation.children[1].children[1].remove();
+      if (mainNavigation.children[2]) {
+        mainNavigation.children[2].remove();
       }
       openCategoryMenu(category);
     });
