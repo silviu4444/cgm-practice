@@ -1,0 +1,124 @@
+@import '__variables.scss';
+@media(min-width: 600px) {
+    .container {
+      padding-left: 20px;
+      padding-right: 20px;
+      h1 {
+        text-align: center;
+        padding-top: 50px;
+      }
+      height: 120vh;
+      table, td, tr, th {
+        // border: 1px solid black;;
+        padding: 10px;
+      }
+      table {
+        max-width: 1000px;
+        border-collapse: collapse;
+        text-align: center;
+        margin-bottom: 20px;
+        thead {
+          tr:first-of-type {
+            background-color: rgb(44, 43, 43);
+            color: white;
+            font-size: 18px;
+            display: block;
+          }
+          tr {
+            display: block;
+            margin: 20px 0;
+            box-shadow: 2px 0px 10px 2px $pagination-border-color;
+          }
+        }
+        tbody {
+          tr {
+            display: block;
+            margin: 20px 0;
+            box-shadow: 2px 0px 10px 2px $pagination-border-color;
+          }
+        }
+        tr:hover {
+          background-color: $pagination-border-color;
+          cursor: pointer;
+        }
+        .table-element-counter {
+          width: 50px;
+        }
+        .table-element-title {
+          width: 150px;
+          p {
+            width: 150px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+        }
+        .table-element-image-container {
+          width: 200px;
+          .table-element-image {
+            width: 100px;
+            height: 50px;
+          }
+        }
+        .table-element-colors {
+          width: 300px;
+        }
+          .table-element-price {
+            color: #0dcaf0;
+          }
+          .table-element-price:hover {
+            color: #0da8f0;
+            cursor: pointer;
+          }
+        img {
+          width: 100px;
+        }
+      }
+      .pagination-status {
+        display: flex;
+        justify-content: space-between;
+        .pagination {
+          width: fit-content;
+          height: fit-content;
+          border: 1px solid $pagination-border-color;
+          border-radius: 5px;
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            .btn_prev {
+              border-right: 1px solid $pagination-border-color;
+            }
+            .btn_next {
+              border-left: 1px solid $pagination-border-color;
+            }
+            li {
+              display: inline-block;
+              padding: 10px;
+              a {
+                color: $pagination-button-color;
+                margin: 0 10px;
+              }
+            }
+            li:hover {
+              background-color: $pagination-border-color;
+              cursor: pointer;
+            }
+            .page-span {
+              color: $pagination-button-color;
+              font-weight: 100;
+            }
+          }
+        }
+        .page-status {
+          border: 1px solid $pagination-border-color;
+          border-radius: 5px;
+          padding: 10px;
+          color: $pagination-button-color;
+          margin: 0;
+          user-select: none;
+        }
+      }
+    }
+}
