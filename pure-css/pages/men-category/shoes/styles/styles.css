@@ -530,6 +530,9 @@ html {
 }
 
 @media (min-width: 600px) {
+  .active {
+    background-color: #dee2e6;
+  }
   .container {
     padding-left: 20px;
     padding-right: 20px;
@@ -539,78 +542,94 @@ html {
     text-align: center;
     padding-top: 50px;
   }
-  .container table, .container td, .container tr, .container th {
+  .container .items-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .container .items-details .general-details table, .container .items-details .general-details td, .container .items-details .general-details tr, .container .items-details .general-details th {
     padding: 10px;
   }
-  .container table {
-    max-width: 1000px;
+  .container .items-details .general-details table {
+    min-width: 700px;
     border-collapse: collapse;
     text-align: center;
     margin-bottom: 20px;
   }
-  .container table thead tr:first-of-type {
+  .container .items-details .general-details table thead tr:first-of-type {
     background-color: #2c2b2b;
     color: white;
     font-size: 18px;
     display: block;
   }
-  .container table thead tr {
+  .container .items-details .general-details table thead tr {
+    margin: 20px 0;
+    -webkit-box-shadow: 2px 0px 10px 2px #dee2e6;
+            box-shadow: 2px 0px 10px 2px #dee2e6;
+  }
+  .container .items-details .general-details table thead .table-element-price {
+    color: white;
+  }
+  .container .items-details .general-details table thead .table-element-price:hover {
+    cursor: auto;
+    color: white;
+  }
+  .container .items-details .general-details table tbody tr {
     display: block;
     margin: 20px 0;
     -webkit-box-shadow: 2px 0px 10px 2px #dee2e6;
             box-shadow: 2px 0px 10px 2px #dee2e6;
   }
-  .container table tbody tr {
-    display: block;
-    margin: 20px 0;
-    -webkit-box-shadow: 2px 0px 10px 2px #dee2e6;
-            box-shadow: 2px 0px 10px 2px #dee2e6;
-  }
-  .container table tr:hover {
-    background-color: #dee2e6;
+  .container .items-details .general-details table tbody tr:hover {
     cursor: pointer;
   }
-  .container table .table-element-counter {
+  .container .items-details .general-details table tr:hover {
+    background-color: #dee2e6;
+  }
+  .container .items-details .general-details table .table-element-counter {
     width: 50px;
   }
-  .container table .table-element-title {
+  .container .items-details .general-details table .table-element-title {
     width: 150px;
   }
-  .container table .table-element-title p {
+  .container .items-details .general-details table .table-element-title p {
     width: 150px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
-  .container table .table-element-image-container {
+  .container .items-details .general-details table .table-element-image-container {
     width: 200px;
   }
-  .container table .table-element-image-container .table-element-image {
+  .container .items-details .general-details table .table-element-image-container .table-element-image {
     width: 100px;
     height: 50px;
   }
-  .container table .table-element-colors {
+  .container .items-details .general-details table .table-element-colors {
     width: 300px;
   }
-  .container table .table-element-price {
+  .container .items-details .general-details table .table-element-price {
     color: #0dcaf0;
   }
-  .container table .table-element-price:hover {
+  .container .items-details .general-details table .table-element-price:hover {
     color: #0da8f0;
     cursor: pointer;
   }
-  .container table img {
+  .container .items-details .general-details table img {
     width: 100px;
   }
-  .container .pagination-status {
+  .container .items-details .general-details .pagination-status {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    min-width: 700px;
   }
-  .container .pagination-status .pagination {
+  .container .items-details .general-details .pagination-status .pagination {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -620,7 +639,7 @@ html {
     border: 1px solid #dee2e6;
     border-radius: 5px;
   }
-  .container .pagination-status .pagination ul {
+  .container .items-details .general-details .pagination-status .pagination ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -629,29 +648,29 @@ html {
         -ms-user-select: none;
             user-select: none;
   }
-  .container .pagination-status .pagination ul .btn_prev {
+  .container .items-details .general-details .pagination-status .pagination ul .btn_prev {
     border-right: 1px solid #dee2e6;
   }
-  .container .pagination-status .pagination ul .btn_next {
+  .container .items-details .general-details .pagination-status .pagination ul .btn_next {
     border-left: 1px solid #dee2e6;
   }
-  .container .pagination-status .pagination ul li {
+  .container .items-details .general-details .pagination-status .pagination ul li {
     display: inline-block;
     padding: 10px;
   }
-  .container .pagination-status .pagination ul li a {
+  .container .items-details .general-details .pagination-status .pagination ul li a {
     color: #0da8f0;
     margin: 0 10px;
   }
-  .container .pagination-status .pagination ul li:hover {
+  .container .items-details .general-details .pagination-status .pagination ul li:hover {
     background-color: #dee2e6;
     cursor: pointer;
   }
-  .container .pagination-status .pagination ul .page-span {
+  .container .items-details .general-details .pagination-status .pagination ul .page-span {
     color: #0da8f0;
     font-weight: 100;
   }
-  .container .pagination-status .page-status {
+  .container .items-details .general-details .pagination-status .page-status {
     border: 1px solid #dee2e6;
     border-radius: 5px;
     padding: 10px;
@@ -661,6 +680,53 @@ html {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+  }
+  .container .items-details .article-details-container {
+    border: 1px solid #dee2e6;
+    -webkit-box-shadow: 2px 0px 10px 2px #dee2e6;
+            box-shadow: 2px 0px 10px 2px #dee2e6;
+    width: 500px;
+    margin-left: 20px;
+    text-align: center;
+  }
+  .container .items-details .article-details-container h1 {
+    color: black;
+    font-size: 25px;
+    padding: 0;
+  }
+  .container .items-details .article-details-container img {
+    width: 250px;
+    height: 140px;
+    -webkit-transition: .2s;
+    transition: .2s;
+    margin: 20px 0;
+  }
+  .container .items-details .article-details-container img:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    cursor: pointer;
+  }
+  .container .items-details .article-details-container p {
+    font-size: 20px;
+  }
+  .container .items-details .article-details-container div {
+    display: block;
+  }
+  .container .items-details .article-details-container select {
+    width: 150px;
+    border: 2px solid #0da8f0;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container .items-details .article-details-container select:focus {
+    border-color: #0da8f0;
+    -webkit-box-shadow: 0px 0px 4px 1px #0da8f0;
+            box-shadow: 0px 0px 4px 1px #0da8f0;
   }
 }
 /*# sourceMappingURL=styles.css.map */
