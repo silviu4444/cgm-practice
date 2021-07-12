@@ -1,0 +1,1 @@
+localStorage.getItem('cart-items') ? null : localStorage.setItem('cart-items', '{"numberOfItems": "0", "items": []}');

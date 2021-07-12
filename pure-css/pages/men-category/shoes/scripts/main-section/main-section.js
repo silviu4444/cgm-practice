@@ -10,17 +10,17 @@ const paginationStatus = {
 };
 
 const onClickTableRow = () => {
-  const trs = document.querySelectorAll(".container-table tbody tr");
+  const tableRows = document.querySelectorAll(".container-table tbody tr");
   const elementFocusStatus = {
-    prevItem: null,
+    isPrevSelected: null,
     prevItemIndex: null,
   };
-  trs.forEach((element, index) => {
+  tableRows.forEach((element, index) => {
     element.addEventListener("click", (e) => {
-      if (elementFocusStatus.prevItem) {
-        trs[elementFocusStatus.prevItemIndex].removeAttribute("class");
+      if (elementFocusStatus.isPrevSelected) {
+        tableRows[elementFocusStatus.prevItemIndex].removeAttribute("class");
       }
-      elementFocusStatus.prevItem = true;
+      elementFocusStatus.isPrevSelected = true;
       elementFocusStatus.prevItemIndex = index;
       element.classList.add("active");
       const currentIndex = index + ((paginationStatus.current_page - 1) * paginationStatus.records_per_page);
