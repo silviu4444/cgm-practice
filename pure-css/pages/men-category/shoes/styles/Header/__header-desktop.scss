@@ -53,6 +53,67 @@
         }
       }
     }
+    @keyframes dialog-entrace {
+      0% {
+        transform: translateY(-1000px);
+      }
+      100%{
+        transform: translateY(0px);
+      }
+    }
+    .dialog-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 11;
+      background-color: rgba(0, 0, 0, 0.1);
+      display: none;
+      dialog {
+        width: 70%;
+        height: 50%;
+        top: 150px;
+        animation: dialog-entrace;
+        animation-duration: .2s;
+        overflow-y: scroll;
+        border: 1px solid $pagination-border-color;
+        article {
+          display: flex;
+          background-color: white;
+          border: 1px solid $pagination-border-color;
+          box-shadow: 2px 0px 10px 2px $pagination-border-color;
+          padding: 10px;
+          margin: 5px;
+          height: 100px;
+          .number-of-items {
+            color: black;
+            display: block;
+            width: 20px;
+            height: fit-content;
+            margin-top: auto;
+            margin-bottom: auto;
+            span {
+              color: blue;
+            }
+            i {
+              font-size: 20px;
+              color: white;
+              margin: 10px 0;
+            }
+            i:hover {
+              cursor: pointer;
+            }
+          }
+          p {
+            color: white;
+          }
+          img {
+            width: 100px;
+          }
+        }
+      }
+    }
   }
 
   .main-navigation {
@@ -242,5 +303,4 @@
       }
     }
   }
-
 }

@@ -6,46 +6,50 @@ const btnPrev = document.querySelector(".btn_prev");
 
 const paginationStatus = {
   current_page: 1,
-  records_per_page: 5,
+  records_per_page: 4,
 };
 
+const elementFocusStatus = {
+  isPrevSelected: true,
+  prevItemIndex: 0,
+  currentDataIndex: 0,
+};
 const onClickTableRow = () => {
   const tableRows = document.querySelectorAll(".container-table tbody tr");
-  const elementFocusStatus = {
-    isPrevSelected: null,
-    prevItemIndex: null,
-  };
   tableRows.forEach((element, index) => {
     element.addEventListener("click", (e) => {
       if (elementFocusStatus.isPrevSelected) {
-        tableRows[elementFocusStatus.prevItemIndex].removeAttribute("class");
+        tableRows[elementFocusStatus.prevItemIndex].classList.remove("active");
       }
       elementFocusStatus.isPrevSelected = true;
       elementFocusStatus.prevItemIndex = index;
       element.classList.add("active");
-      const currentIndex = index + ((paginationStatus.current_page - 1) * paginationStatus.records_per_page);
-      addArticleDetails(currentIndex)
+      const currentIndex =
+        index +
+        (paginationStatus.current_page - 1) * paginationStatus.records_per_page;
+      navigateThroughRows(elementFocusStatus, paginationStatus);
+      addArticleDetails(currentIndex);
     });
   });
-
 };
-
-
+addArticleDetails(0);
 
 const prevPage = () => {
   if (paginationStatus.current_page > 1) {
     paginationStatus.current_page--;
+    elementFocusStatus.prevItemIndex = 0;
     changePage(paginationStatus.current_page);
-    if(paginationStatus.current_page > 2) {
-      onClickTableRow();
-    }
+    addArticleDetails(elementFocusStatus.currentDataIndex);
+    onClickTableRow();
   }
 };
 
 const nextPage = () => {
   if (paginationStatus.current_page < numPages()) {
     paginationStatus.current_page++;
+    elementFocusStatus.prevItemIndex = 0;
     changePage(paginationStatus.current_page);
+    addArticleDetails(elementFocusStatus.currentDataIndex);
     onClickTableRow();
   }
 };
@@ -101,10 +105,10 @@ const changePage = (page) => {
     `;
     listing_table.children[1].appendChild(tr);
   }
-  const firstRow = document.getElementsByTagName('tr')[1];
-  firstRow.setAttribute('id', "start-row");
-  navigateThroughRows(firstRow)
-  if(paginationStatus.current_page < 2) {
+  const firstRow = document.getElementsByTagName("tr")[1];
+  firstRow.setAttribute("id", "start-row");
+  navigateThroughRows(elementFocusStatus, paginationStatus);
+  if (paginationStatus.current_page < 2) {
     onClickTableRow();
   }
   page_span.innerHTML = page;
@@ -135,3 +139,5 @@ btnNext.addEventListener("click", (e) => {
 btnPrev.addEventListener("click", () => {
   prevPage();
 });
+
+export { prevPage, nextPage };
