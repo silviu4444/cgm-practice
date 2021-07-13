@@ -1,185 +1,232 @@
-@import '__variables.scss';
-@media(min-width: 600px) {
-  .active {
-    background-color: $pagination-border-color;
-  }
-    .container {
-      padding-left: 20px;
-      padding-right: 20px;
-      h1 {
-        text-align: center;
-        padding-top: 50px;
-      }
-      height: 120vh;
-      .items-details {
-        display: flex;
-        justify-content: space-around;
-        .general-details {
-          table, td, tr, th {
-            padding: 10px;
+@import "__variables.scss";
+@media (min-width: 600px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+    h1 {
+      text-align: center;
+      padding-top: 50px;
+    }
+    height: 120vh;
+    .items-details {
+      display: flex;
+      justify-content: space-around;
+      .general-details {
+        table,
+        td,
+        tr,
+        th {
+          padding: 10px;
+        }
+        table {
+          min-width: 700px;
+          border-collapse: collapse;
+          text-align: center;
+          margin-bottom: 20px;
+          thead {
+            tr:first-of-type {
+              background-color: rgb(44, 43, 43);
+              color: white;
+              font-size: 18px;
+              display: block;
+            }
+            tr {
+              margin: 20px 0;
+              box-shadow: 2px 0px 10px 2px $pagination-border-color;
+            }
+            .table-element-price {
+              color: white;
+            }
+            .table-element-price:hover {
+              cursor: auto;
+              color: white;
+            }
           }
-          table {
-            min-width: 700px;
-            border-collapse: collapse;
-            text-align: center;
-            margin-bottom: 20px;
-            thead {
-              tr:first-of-type {
-                background-color: rgb(44, 43, 43);
-                color: white;
-                font-size: 18px;
-                display: block;
-              }
-              tr {
-                margin: 20px 0;
-                box-shadow: 2px 0px 10px 2px $pagination-border-color;
-              }
-              .table-element-price {
-                color: white;
-              }
-              .table-element-price:hover {
-                cursor: auto;
-                color: white;
-              }
-              
-            }
-            tbody {
-              tr {
-                display: block;
-                margin: 20px 0;
-                box-shadow: 2px 0px 10px 2px $pagination-border-color;
-              }
-              tr:hover {
-                cursor: pointer;
-              }
-            }
-            tr:hover {
+          tbody {
+            .active {
               background-color: $pagination-border-color;
             }
-            .table-element-counter {
-              width: 50px;
+            tr {
+              display: block;
+              margin: 20px 0;
+              box-shadow: 2px 0px 10px 2px $pagination-border-color;
             }
-            .table-element-title {
+            tr:hover {
+              cursor: pointer;
+            }
+          }
+          tr:hover {
+            background-color: $pagination-border-color;
+          }
+          .table-element-counter {
+            width: 50px;
+          }
+          .table-element-title {
+            width: 150px;
+            p {
               width: 150px;
-              p {
-                width: 150px;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-              }
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
             }
-            .table-element-image-container {
-              width: 200px;
-              .table-element-image {
-                width: 100px;
-                height: 50px;
-              }
-            }
-            .table-element-colors {
-              width: 300px;
-            }
-              .table-element-price {
-                color: #0dcaf0;
-              }
-              .table-element-price:hover {
-                color: #0da8f0;
-                cursor: pointer;
-              }
-            img {
+          }
+          .table-element-image-container {
+            width: 200px;
+            .table-element-image {
               width: 100px;
+              height: 50px;
             }
           }
-          .pagination-status {
-            display: flex;
-            justify-content: space-between;
-            min-width: 700px;
-            .pagination {
-              width: fit-content;
-              height: fit-content;
-              border: 1px solid $pagination-border-color;
-              border-radius: 5px;
-              ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                user-select: none;
-                .btn_prev {
-                  border-right: 1px solid $pagination-border-color;
-                }
-                .btn_next {
-                  border-left: 1px solid $pagination-border-color;
-                }
-                li {
-                  display: inline-block;
-                  padding: 10px;
-                  a {
-                    color: $pagination-button-color;
-                    margin: 0 10px;
-                  }
-                }
-                li:hover {
-                  background-color: $pagination-border-color;
-                  cursor: pointer;
-                }
-                .page-span {
-                  color: $pagination-button-color;
-                  font-weight: 100;
-                }
-              }
-            }
-            .page-status {
-              border: 1px solid $pagination-border-color;
-              border-radius: 5px;
-              padding: 10px;
-              color: $pagination-button-color;
-              margin: 0;
-              user-select: none;
-            }
+          .table-element-colors {
+            width: 300px;
           }
-        }
-        .article-details-container {
-          border: 1px solid $pagination-border-color;
-          box-shadow: 2px 0px 10px 2px $pagination-border-color;
-          width: 500px;
-          margin-left: 20px;
-          text-align: center;
-          h1 {
-            color: black;
-            font-size: 25px;
-            padding: 0;
+          .table-element-price {
+            color: #0dcaf0;
           }
-          img {
-            width: 250px;
-            height: 140px;
-            transition: .2s;
-            margin: 20px 0;
-          }
-          img:hover {
-            transform: scale(1.2);
+          .table-element-price:hover {
+            color: #0da8f0;
             cursor: pointer;
           }
-          p {
-            font-size: 20px;
+          img {
+            width: 100px;
           }
-          div {
-            display: block;
+        }
+        .pagination-status {
+          display: flex;
+          justify-content: space-between;
+          min-width: 700px;
+          .pagination {
+            width: fit-content;
+            height: fit-content;
+            border: 1px solid $pagination-border-color;
+            border-radius: 5px;
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              user-select: none;
+              .btn_prev {
+                border-right: 1px solid $pagination-border-color;
+              }
+              .btn_next {
+                border-left: 1px solid $pagination-border-color;
+              }
+              li {
+                display: inline-block;
+                padding: 10px;
+                a {
+                  color: $pagination-button-color;
+                  margin: 0 10px;
+                }
+              }
+              li:hover {
+                background-color: $pagination-border-color;
+                cursor: pointer;
+              }
+              .page-span {
+                color: $pagination-button-color;
+                font-weight: 100;
+              }
+            }
           }
-          select {
-            width: 150px;
-            border: 2px solid $pagination-button-color;
-            border-radius: 4px;
-            background-color: transparent;
-            outline: none;
+          .page-status {
+            border: 1px solid $pagination-border-color;
+            border-radius: 5px;
+            padding: 10px;
+            color: $pagination-button-color;
+            margin: 0;
+            user-select: none;
+          }
+        }
+      }
+      .article-details-container {
+        border: 1px solid $pagination-border-color;
+        box-shadow: 2px 0px 10px 2px $pagination-border-color;
+        width: 500px;
+        margin-left: 20px;
+        text-align: center;
+        h1 {
+          color: black;
+          font-size: 25px;
+          padding: 0;
+        }
+        img {
+          width: 250px;
+          height: 140px;
+          transition: 0.2s;
+          margin: 20px 0;
+        }
+        img:hover {
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+        p {
+          font-size: 20px;
+        }
+        div {
+          display: block;
+        }
+        select {
+          width: 150px;
+          border: 2px solid $pagination-button-color;
+          border-radius: 4px;
+          background-color: transparent;
+          outline: none;
+          padding: 5px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        select:focus {
+          border-color: $pagination-button-color;
+          box-shadow: 0px 0px 4px 1px $pagination-button-color;
+        }
+        .warning-size-chose {
+          border: 1px solid rgb(204, 201, 12);
+          border-radius: 5px;
+          width: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .buttons-container {
+          padding: 5px;
+          button {
+            border: 1px solid $pagination-button-color;
+            font-size: 17px;
             padding: 5px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 5px;
+            background-color: transparent;
+            color: black;
+            border-radius: 5px;
+            transition: 0.2s;
           }
-          select:focus {
-            border-color: $pagination-button-color;
-            box-shadow: 0px 0px 4px 1px $pagination-button-color;
+          button:hover {
+            background-color: $pagination-button-color;
+            color: white;
+            cursor: pointer;
           }
+          .chose-size {
+            background-color: $pagination-button-color;
+            color: white;
+          }
+        }
+        .add-to-cart-button {
+          margin-top: 20px;
+          background-color: $pagination-button-color;
+          border: 1px solid $pagination-button-color;
+          border-radius: 5px;
+          color: white;
+          padding: 10px;
+          font-size: 20px;
+          width: 30%;
+          transition: 0.2s;
+        }
+        .add-to-cart-button:hover {
+          background-color: white;
+          color: $pagination-button-color;
+          cursor: pointer;
         }
       }
     }
+  }
 }

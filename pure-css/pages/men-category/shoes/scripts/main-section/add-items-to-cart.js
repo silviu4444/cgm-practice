@@ -1,23 +1,7 @@
 import data from "./items/shoes-list.js";
 const openCartButton = document.querySelector(
-  "body > header > div > ul > li.main-header__cart > button"
+  "body > header > div > ul > li:nth-child(1)"
 );
-const userMenu = document.querySelector("body > header > div");
-const cartItemsContainer = document.querySelector("body > header > div > div")
-openCartButton.addEventListener("click", (e) => {
-  const cartItems = JSON.parse(localStorage.getItem("cart-items")).items;
-  cartItemsContainer.classList.toggle("d-block")
-  console.log(cartItems)
-  cartItems.forEach(element => {
-      cartItemsContainer.innerHTML += `
-      <article>
-        <img src="${data.products[element.id - 1].colors[element.colors]}" />
-        <h4>${element.name}</h4>
-      </article>
-      `
-  });
-});
-
 // localStorage.clear()
 const addItemsToCart = (item) => {
   const previousItemsJSON = localStorage.getItem("cart-items");
