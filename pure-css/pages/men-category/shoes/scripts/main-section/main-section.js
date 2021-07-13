@@ -1,5 +1,5 @@
 import data from "./items/shoes-list.js";
-import addArticleDetails from "./add-article-details.js";
+import showArticleDetails from "./add-article-details.js";
 import navigateThroughRows from "./navigate-through-rows.js";
 const btnNext = document.querySelector(".btn_next");
 const btnPrev = document.querySelector(".btn_prev");
@@ -28,18 +28,18 @@ const onClickTableRow = () => {
         index +
         (paginationStatus.current_page - 1) * paginationStatus.records_per_page;
       navigateThroughRows(elementFocusStatus, paginationStatus);
-      addArticleDetails(currentIndex);
+      showArticleDetails(currentIndex);
     });
   });
 };
-addArticleDetails(0);
+showArticleDetails(0);
 
 const prevPage = () => {
   if (paginationStatus.current_page > 1) {
     paginationStatus.current_page--;
     elementFocusStatus.prevItemIndex = 0;
     changePage(paginationStatus.current_page);
-    addArticleDetails(elementFocusStatus.currentDataIndex);
+    showArticleDetails(elementFocusStatus.currentDataIndex);
     onClickTableRow();
   }
 };
@@ -49,7 +49,7 @@ const nextPage = () => {
     paginationStatus.current_page++;
     elementFocusStatus.prevItemIndex = 0;
     changePage(paginationStatus.current_page);
-    addArticleDetails(elementFocusStatus.currentDataIndex);
+    showArticleDetails(elementFocusStatus.currentDataIndex);
     onClickTableRow();
   }
 };

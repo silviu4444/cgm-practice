@@ -812,7 +812,8 @@ html {
             box-shadow: 0px 0px 4px 1px #0da8f0;
   }
   .container .items-details .article-details-container .warning-size-chose {
-    border: 1px solid red;
+    border: 1px solid #ccc90c;
+    border-radius: 5px;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -838,7 +839,7 @@ html {
     color: white;
     cursor: pointer;
   }
-  .container .items-details .article-details-container .buttons-container .chosed-size {
+  .container .items-details .article-details-container .buttons-container .chose-size {
     background-color: #0da8f0;
     color: white;
   }

@@ -1,5 +1,5 @@
 import { prevPage, nextPage } from "./main-section.js";
-import addArticleDetails from "./add-article-details.js";
+import showArticleDetails from "./add-article-details.js";
 const navigateThroughRows = (elementStatus, paginationStatus) => {
   const tableRows = document.querySelectorAll("tbody tr");
   let firstRow = tableRows[elementStatus.prevItemIndex];
@@ -27,7 +27,7 @@ const navigateThroughRows = (elementStatus, paginationStatus) => {
           index +
           (paginationStatus.current_page - 1) *
             paginationStatus.records_per_page;
-        addArticleDetails(currentIndex);
+        showArticleDetails(currentIndex);
       }
     } else if (e.keyCode == "40") {
       //down arrow
@@ -40,7 +40,7 @@ const navigateThroughRows = (elementStatus, paginationStatus) => {
           index +
           (paginationStatus.current_page - 1) *
             paginationStatus.records_per_page;
-        addArticleDetails(currentIndex);
+        showArticleDetails(currentIndex);
       }
     } else if (e.keyCode == "37") {
       // left arrow

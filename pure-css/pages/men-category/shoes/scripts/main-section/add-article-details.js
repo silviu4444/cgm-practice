@@ -33,11 +33,11 @@ const sizeButtons = (dataOfItems) => {
     button.addEventListener("click", () => {
       if (buttonStatus.isClicked) {
         const prevIndex = buttonStatus.previousButtonIndex;
-        buttonsContainer.children[prevIndex].classList.remove("chosed-size");
+        buttonsContainer.children[prevIndex].classList.remove("chose-size");
       }
       buttonStatus.isClicked = true;
       buttonStatus.previousButtonIndex = index;
-      button.classList.add("chosed-size");
+      button.classList.add("chose-size");
       buttonsContainer.classList.remove("warning-size-chose");
     });
     buttonsContainer.appendChild(button);
@@ -51,7 +51,7 @@ const addToCartButton = (itemData) => {
   button.innerHTML = `<i class="fas fa-cart-plus"></i> ${itemData.price}$`;
   button.addEventListener("click", () => {
     const selectValue = document.getElementsByTagName("select")[0].value;
-    const selectedSize = document.querySelector(".chosed-size");
+    const selectedSize = document.querySelector(".chose-size");
     const sizeButtons = document.querySelector(".buttons-container");
     if (selectedSize === null) {
       sizeButtons.classList.add("warning-size-chose");
@@ -69,7 +69,7 @@ const addToCartButton = (itemData) => {
   return button;
 };
 
-const addArticleDetails = (index) => {
+const showArticleDetails = (index) => {
   const dataToInsert = data.products[index];
   const articleDetailsContainer = document.querySelector(
     ".article-details-container"
@@ -103,6 +103,5 @@ const addArticleDetails = (index) => {
     addToCartButton(dataToInsert),
     articleDetailsContainer.children[6]
   );
-  // sizeButtons(dataToInsert)
 };
-export default addArticleDetails;
+export default showArticleDetails;
