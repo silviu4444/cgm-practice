@@ -1,6 +1,7 @@
 import data from "./items/shoes-list.js";
 import showArticleDetails from "./add-article-details.js";
 import navigateThroughRows from "./navigate-through-rows.js";
+import { setCurrentDataIndex } from "../utility-functions/utility-functions.js";
 const btnNext = document.querySelector(".btn_next");
 const btnPrev = document.querySelector(".btn_prev");
 
@@ -27,33 +28,27 @@ const onClickTableRow = () => {
       const currentIndex =
         index +
         (paginationStatus.current_page - 1) * paginationStatus.records_per_page;
-      navigateThroughRows(elementFocusStatus, paginationStatus);
+      navigateThroughRows(elementFocusStatus);
       showArticleDetails(currentIndex);
     });
   });
 };
 showArticleDetails(0);
-
-const prevPage = () => {
-  if (paginationStatus.current_page > 1) {
-    paginationStatus.current_page--;
+const changeNextOrPreviousPage = (moveTo) => {
+  const needsPaginate =
+    (paginationStatus.current_page < numPages() && moveTo === "next") ||
+    (paginationStatus.current_page > 1 && moveTo === "previous");
+  if (needsPaginate) {
+    moveTo === "next"
+      ? paginationStatus.current_page++
+      : paginationStatus.current_page--;
+    setCurrentDataIndex();
     elementFocusStatus.prevItemIndex = 0;
     changePage(paginationStatus.current_page);
     showArticleDetails(elementFocusStatus.currentDataIndex);
     onClickTableRow();
   }
 };
-
-const nextPage = () => {
-  if (paginationStatus.current_page < numPages()) {
-    paginationStatus.current_page++;
-    elementFocusStatus.prevItemIndex = 0;
-    changePage(paginationStatus.current_page);
-    showArticleDetails(elementFocusStatus.currentDataIndex);
-    onClickTableRow();
-  }
-};
-
 const changePage = (page) => {
   const dataToInsert = data.products;
   let page_span = document.querySelector(".page-span");
@@ -69,12 +64,12 @@ const changePage = (page) => {
   listing_table.innerHTML = `
   <thead>
   <tr>
-          <td class="table-element-counter">Nr</td>
-          <td class="table-element-image-container">Product</td>
-          <td class="table-element-title">Name</td>
-          <td class="table-element-brand">Brand</td>
-          <td class="table-element-price">Price</td>
-      </tr>
+  <td class="table-element-counter">Nr</td>
+  <td class="table-element-image-container">Product</td>
+  <td class="table-element-title">Name</td>
+  <td class="table-element-brand">Brand</td>
+  <td class="table-element-price">Price</td>
+  </tr>
   </thead>
   <tbody>
   </tbody>`;
@@ -85,29 +80,29 @@ const changePage = (page) => {
   ) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-    <td class="table-element-counter">
+      <td class="table-element-counter">
       ${i + 1}
-    </td>
-    <td class="table-element-image-container">
-        <img class="table-element-image" src="${
-          Object.values(dataToInsert[i].colors)[0]
-        }" />
-    </td>
-    <td class="table-element-title">
-        <p>${dataToInsert[i].name}</p>
-    </td>
-    <td class="table-element-brand">
-        <p>${dataToInsert[i].brand}</p>
-    </td>
-    <td>
-        <strong class="table-element-price">${dataToInsert[i].price}$</strong>
-    </td>
-    `;
+      </td>
+      <td class="table-element-image-container">
+      <img class="table-element-image" src="${
+        Object.values(dataToInsert[i].colors)[0]
+      }" />
+      </td>
+      <td class="table-element-title">
+      <p>${dataToInsert[i].name}</p>
+      </td>
+      <td class="table-element-brand">
+      <p>${dataToInsert[i].brand}</p>
+      </td>
+      <td>
+      <strong class="table-element-price">${dataToInsert[i].price}$</strong>
+      </td>
+      `;
     listing_table.children[1].appendChild(tr);
   }
   const firstRow = document.getElementsByTagName("tr")[1];
   firstRow.setAttribute("id", "start-row");
-  navigateThroughRows(elementFocusStatus, paginationStatus);
+  navigateThroughRows(elementFocusStatus);
   if (paginationStatus.current_page < 2) {
     onClickTableRow();
   }
@@ -134,10 +129,10 @@ const numPages = () => {
 changePage(1);
 
 btnNext.addEventListener("click", (e) => {
-  nextPage();
+  changeNextOrPreviousPage("next");
 });
 btnPrev.addEventListener("click", () => {
-  prevPage();
+  changeNextOrPreviousPage("previous");
 });
 
-export { prevPage, nextPage };
+export { changeNextOrPreviousPage, paginationStatus, elementFocusStatus };
