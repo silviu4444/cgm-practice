@@ -7,6 +7,7 @@ const addItemsToCart = (item) => {
   const previousItemsParsed = JSON.parse(previousItemsJSON);
   const items = [...previousItemsParsed["items"]];
   let numberOfItems = previousItemsParsed["numberOfItems"];
+  const currentLength = items.length;
 
   const elementAlreadyInCart = items.findIndex(
     (element) =>
@@ -14,19 +15,17 @@ const addItemsToCart = (item) => {
       element.colors === item.colors &&
       element.id === item.id
   );
-  const currentLength = items.length
   if (elementAlreadyInCart > -1) {
-    if(items[elementAlreadyInCart].nrOfItems >= 5) {
-      alert("Maximum number of the same product in cart!")
+    items[elementAlreadyInCart].nrOfItems >= 5
+    ? alert(
+      "The maximum number of the same product in cart has been reached!"
+      )
+      : (items[elementAlreadyInCart].nrOfItems++, numberOfItems++);
     } else {
-      items[elementAlreadyInCart].nrOfItems++;
-      numberOfItems++;
+      item.nrOfItems = 1;
+      items.push(item);
     }
-  } else {
-    item.nrOfItems = 1;
-    items.push(item);
-  }
-  if(currentLength < items.length) {
+  if (currentLength < items.length) {
     numberOfItems++;
   }
   const cartItems = {
