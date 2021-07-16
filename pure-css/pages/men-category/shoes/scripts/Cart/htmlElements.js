@@ -27,7 +27,7 @@ const dialogHTML = `
             <span></span>
           </div>
           <select name="delivery-method" id="delivery-method">
-            <option value="0" selected >Select Collection or Delivery</option>
+            <option value="not-selected" selected >Select Collection or Delivery</option>
             <option value="0">Pick-Up (free)</option>
             <option value="10">Delivery + 10$</option>
           </select>
@@ -35,7 +35,7 @@ const dialogHTML = `
             <h2>TOTAL</h2>
             <span></span>
           </div>
-          <button>GO TO SECURE CHECKOUT</button>
+          <button id="go-to-checkout">GO TO SECURE CHECKOUT</button>
         </div>
       </div>
     </dialog>`;

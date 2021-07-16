@@ -1,7 +1,11 @@
 // localStorage.clear()
 import data from "../main-section/items/shoes-list.js";
 import { dialogHTML } from "./htmlElements.js";
-import { appendTableRowsInCart, updateDialogCheckout } from "./utility-functions/utility-functions.js";
+import {
+  appendTableRowsInCart,
+  updateDialogCheckout,
+  calcTotalPrice,
+} from "./utility-functions/utility-functions.js";
 const productsData = data.products;
 const openCartButton = document.querySelector(
   "body > header > div > ul > li:nth-child(1)"
@@ -71,15 +75,38 @@ const increaseOrDecreaseItem = (button, index, localStorageItems) => {
   const articlesData = { ...localStorageItems };
   let nrOfSameItem = articlesData.items[index].nrOfItems;
   const decreaseCondition =
-    nrOfSameItem <= 5 && buttonAction === "decrease-item";
+    nrOfSameItem <= 5 && nrOfSameItem > 1 && buttonAction === "decrease-item";
   const increaseCondition =
     nrOfSameItem <= 4 && buttonAction === "increase-item";
   decreaseCondition ? (nrOfSameItem--, articlesData.numberOfItems--) : null;
   increaseCondition ? (nrOfSameItem++, articlesData.numberOfItems++) : null;
   articlesData.items[index].nrOfItems = nrOfSameItem;
-  if (nrOfSameItem === 0) {
-    removeItemFromCart(index, localStorageItems);
-  }
   setLocalStorage(articlesData);
   addItemsToDialogTable();
 };
+
+const checkoutBtn = document.querySelector("#go-to-checkout");
+checkoutBtn.addEventListener("click", () => {
+  const localStorageData = JSON.parse(localStorage.getItem("cart-items"));
+  const itemsLengthGreaterThanZero = localStorageData.items.length > 0;
+  const deliveryMethodIsSelected =
+    checkoutBtn.parentNode.children[2].value !== "not-selected";
+  if (deliveryMethodIsSelected && itemsLengthGreaterThanZero) {
+    const deliveryPrice = checkoutBtn.parentNode.children[2].value;
+    const totalPrice = (calcTotalPrice() + parseInt(deliveryPrice)).toFixed(2);
+    return {
+      ...localStorageData,
+      totalPrice,
+    };
+  }
+  const itemsLengthIsEqualToZero = localStorageData.items.length === 0;
+  const deliveryMethodIsNotSelected =
+    checkoutBtn.parentNode.children[2].value === "not-selected";
+
+  itemsLengthIsEqualToZero &&
+    (deliveryMethodIsNotSelected || !deliveryMethodIsNotSelected) &&
+    alert("Your cart is empty!");
+  deliveryMethodIsNotSelected &&
+    !itemsLengthIsEqualToZero &&
+    alert("Choose a delivery method!");
+});
