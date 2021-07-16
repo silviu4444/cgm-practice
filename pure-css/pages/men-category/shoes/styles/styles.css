@@ -871,11 +871,12 @@ html {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     display: none;
+    z-index: 13;
   }
   .dialog-cart-wrapper .dialog-cart {
-    height: 50%;
+    height: 70%;
     width: 80%;
-    margin-top: 200px;
+    margin-top: 120px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -914,7 +915,10 @@ html {
     margin-top: 20px;
     width: 100%;
   }
-  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table thead, .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table tbody, .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table tr, .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table td {
+  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table thead,
+  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table tbody,
+  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table tr,
+  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table td {
     padding: 10px;
   }
   .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table tr {
@@ -941,7 +945,9 @@ html {
   .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(1) .item-details__info p:nth-child(1) {
     font-size: 17px;
   }
-  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(2), .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(3), .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(4) {
+  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(2),
+  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(3),
+  .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(4) {
     vertical-align: super;
   }
   .dialog-cart-wrapper .dialog-cart .dialog-items-container .dialog-table__tbody .tbody_table-row td:nth-child(3) .increase-item {
@@ -1011,6 +1017,14 @@ html {
     margin: 10px 0;
   }
   .dialog-cart-wrapper .dialog-cart .dialog-checkout__container select {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: 2px solid #0da8f0;
+    border-radius: 4px;
+    background-color: white;
+    outline: none;
+    padding: 5px;
     margin-bottom: 100px;
   }
   .dialog-cart-wrapper .dialog-cart .dialog-checkout__container .total-price {

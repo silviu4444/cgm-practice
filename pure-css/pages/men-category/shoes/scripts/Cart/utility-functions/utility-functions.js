@@ -40,4 +40,46 @@ const appendTableRowsInCart = (localStorageData, pathToAppend) => {
   });
 };
 
-export { appendTableRowsInCart };
+
+
+
+const updateDialogCheckout = (localStorageData) => {
+  const calcTotalPrice = () => {
+    let price = 0;
+    localStorageData.items.forEach((item) => {
+      price += productsData[item.id - 1].price * item.nrOfItems;
+    });
+    return price;
+  };
+  const dialogCheckout = document.querySelector(
+    "body > div > dialog > div.dialog-checkout > div.dialog-checkout__container"
+  );
+  const [totalItems, subTotal, selector, totalPrice, checkoutBtn] = [
+    dialogCheckout.children[0],
+    dialogCheckout.children[1].children[1],
+    dialogCheckout.children[2],
+    dialogCheckout.children[3].children[1],
+    dialogCheckout.children[4],
+  ];
+  totalItems.innerHTML = `${localStorageData.numberOfItems} items in your bag`;
+  subTotal.innerHTML = `${calcTotalPrice().toFixed(2)} $`;
+  selector.addEventListener("change", (e) => {
+    const selectorValue = e.target.value;
+    localStorageData.numberOfItems > 0
+      ? (totalPrice.innerHTML = `${(
+          calcTotalPrice() + parseInt(selectorValue)
+        ).toFixed(2)} $`)
+      : (totalPrice.innerText = "0.00 $");
+  });
+  localStorageData.numberOfItems > 0 && selector.value === "10"
+    ? (totalPrice.innerHTML = `${(
+        calcTotalPrice() + parseInt(selector.value)
+      ).toFixed(2)} $`)
+    : (totalPrice.innerHTML = `${calcTotalPrice().toFixed()} $`);
+  };
+  // const checkoutEventListenner = () => {
+  //   console.log(JSON.parse(localStorage.getItem('cart-items')))
+  //   console.log('clicked')
+  // }
+  // checkoutBtn.addEventListener('click', checkoutEventListenner)
+export { appendTableRowsInCart, updateDialogCheckout };

@@ -21,17 +21,19 @@ const dialogHTML = `
       </div>
       <div class="dialog-checkout">
         <div class="dialog-checkout__container">
-          <h3>X Items in your Bag</h3>
+          <h3>Items in your Bag</h3>
           <div class="subtotal-price">
             <p>Subtotal</p>
-            <span>Price</span>
+            <span></span>
           </div>
-          <select name="" id="">
-            <option value="">Select Collection or Delivery</option>
+          <select name="delivery-method" id="delivery-method">
+            <option value="0" selected >Select Collection or Delivery</option>
+            <option value="0">Pick-Up (free)</option>
+            <option value="10">Delivery + 10$</option>
           </select>
           <div class="total-price">
             <h2>TOTAL</h2>
-            <span>Price</span>
+            <span></span>
           </div>
           <button>GO TO SECURE CHECKOUT</button>
         </div>

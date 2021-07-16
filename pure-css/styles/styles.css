@@ -849,7 +849,8 @@ html {
   }
   .container__popular-items article .article-container img:hover {
     border-radius: 10px;
-    cursor: pointer;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
   }
   .container__popular-items article .article-container .product-title {
     -ms-grid-column: 2;
